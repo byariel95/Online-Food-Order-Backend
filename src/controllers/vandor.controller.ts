@@ -1,7 +1,15 @@
 import {Request, Response, NextFunction} from 'express';
 
 const createVandor = async (req:Request,res:Response, next:NextFunction)=>{
-    res.json({message: 'hello vandor'});
+    res.json({message: 'create vandor'});
 }
 
-export { createVandor};
+const getVandors = async (req:Request,res:Response, next:NextFunction)=>{
+    res.json({message: 'get all vandor'});
+}
+
+const getVandorByID = async (req:Request,res:Response, next:NextFunction)=>{
+    res.json({message: `this is ${req.params.id}`});
+}
+
+export { createVandor, getVandorByID, getVandors};
